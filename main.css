@@ -286,7 +286,6 @@ section {
   padding: 30px;
   background: linear-gradient(135deg, #241313, #232527);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
   animation: fadeIn 1s ease-out;
 }
@@ -511,7 +510,6 @@ section {
   align-items: center;
   padding: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -716,7 +714,7 @@ section {
     background: linear-gradient(135deg, #241313, #232527);
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    
 }
 
 .contact-us h2 {
@@ -848,7 +846,7 @@ section {
     font-family: "Oswald", sans-serif;
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 
