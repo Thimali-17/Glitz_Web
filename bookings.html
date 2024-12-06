@@ -238,6 +238,13 @@
         outline: none;
       }
 
+      .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
       /* Styling for Submit and Reset buttons */
       input[type="submit"],
       input[type="reset"] {
@@ -290,21 +297,18 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background: linear-gradient(135deg, #fd182b, #ff7171);
         padding: 15px 15px;
         border-radius: 50%;
-        color: white;
-        font-size: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        color:black;
+        font-size: 40px;
         text-align: center;
         transition: all 0.3s ease;
         z-index: 100;
       }
 
       .back-button:hover {
-        background-color: #c11c1c;
         transform: scale(1.1);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    
       }
 
       .back-button i {
@@ -417,9 +421,12 @@
             />
           </div>
 
+          <div class="btn">
           <input type="submit" value="Book Now" />
           <input type="reset" value="Reset" />
         </form>
+      </div>
+
       </div>
 
       <div class="service_display">
