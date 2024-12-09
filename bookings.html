@@ -62,7 +62,7 @@
 
       /* Apply animations to both cards */
       .booking_card {
-        width: 90%; 
+        width: 90%;
         padding: 30px;
         border-radius: 15px;
         text-align: center;
@@ -227,9 +227,34 @@
         padding: 10px;
         border: 1px solid #ddd;
         border-radius: 5px;
-        font-size: 12px;
+        font-size: 15px;
         font-family: "Oswald", sans-serif;
         transition: border-color 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      input::placeholder,
+      select option {
+        color: #aaa;
+        font-family: "Oswald", sans-serif;
+        font-size: 15px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        input,
+        select {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        input,
+        select {
+          font-size: 12px;
+          padding: 6px;
+        }
       }
 
       input:focus,
@@ -245,7 +270,6 @@
         gap: 30px;
       }
 
-      /* Styling for Submit and Reset buttons */
       input[type="submit"],
       input[type="reset"] {
         cursor: pointer;
@@ -256,7 +280,9 @@
         transition: all 0.3s ease;
         width: 50%;
         box-sizing: border-box;
+        text-align: center;
         font-family: "Oswald", sans-serif;
+       
       }
 
       /* Submit Button */
@@ -299,7 +325,7 @@
         right: 20px;
         padding: 15px 15px;
         border-radius: 50%;
-        color:black;
+        color: black;
         font-size: 40px;
         text-align: center;
         transition: all 0.3s ease;
@@ -308,29 +334,71 @@
 
       .back-button:hover {
         transform: scale(1.1);
-    
       }
 
       .back-button i {
         margin: 0;
       }
+     
 
-      /* Responsive design */
+      /* Responsive Styles */
       @media (max-width: 768px) {
+        body,
+        html {
+          flex-direction: column;
+        }
+
         .container {
           flex-direction: column;
-          align-items: center;
+          width: 100%;
         }
 
         .booking_card,
         .service_display {
-          width: 60%;
-          margin-bottom: 30px;
+          width: 95%;
+          margin: 10px auto;
         }
 
-        .booking_card,
-        .service_display {
-          margin: 10px;
+        .service_item {
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: 10px;
+        }
+
+        #logo_main {
+          max-width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .service_item p {
+          font-size: 14px;
+        }
+
+        #logo_main {
+          max-width: 80px;
+        }
+
+        @media (max-width: 768px) {
+          .back-button {
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 10px;
+            font-size: 30px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .back-button {
+            bottom: 8px;
+            right: 8px;
+            padding: 8px 8px;
+            font-size: 24px;
+          }
         }
       }
     </style>
@@ -422,11 +490,10 @@
           </div>
 
           <div class="btn">
-          <input type="submit" value="Book Now" />
-          <input type="reset" value="Reset" />
+            <input type="submit" value="Book Now" />
+            <input type="reset" value="Reset" />
+          </div>
         </form>
-      </div>
-
       </div>
 
       <div class="service_display">
@@ -461,12 +528,12 @@
         const dateInput = document.getElementById("booking_date");
         const serviceItems = document.querySelectorAll(".service_item");
         const serviceDropdown = document.getElementById("service_type");
-    
+
         // Disable past dates
         if (dateInput) {
           dateInput.setAttribute("min", new Date().toISOString().split("T")[0]);
         }
-    
+
         // Function to highlight selected service item
         const highlightServiceItem = (selectedService) => {
           serviceItems.forEach((item) => {
@@ -477,7 +544,7 @@
             }
           });
         };
-    
+
         // Event listener for dropdown change
         if (serviceDropdown) {
           serviceDropdown.addEventListener("change", () => {
@@ -485,7 +552,7 @@
             highlightServiceItem(selectedService);
           });
         }
-    
+
         // Event listeners for service item clicks
         serviceItems.forEach((item) => {
           item.addEventListener("click", () => {
@@ -496,7 +563,7 @@
             highlightServiceItem(selectedService);
           });
         });
-    
+
         // Reset functionality
         if (form) {
           form.addEventListener("reset", () => {
@@ -506,22 +573,23 @@
               serviceDropdown.value = ""; // Clear the dropdown
             }
           });
-    
+
           // Form submission handling
           form.addEventListener("submit", (event) => {
             event.preventDefault();
-    
+
             const nameInput = document.getElementById("customer_name");
-            const vehicleNumberInput = document.getElementById("vehicle_number");
-    
+            const vehicleNumberInput =
+              document.getElementById("vehicle_number");
+
             if (!nameInput || !vehicleNumberInput) {
               console.error("Required input elements are missing.");
               return;
             }
-    
+
             const name = nameInput.value.trim();
             const vehicleNumber = vehicleNumberInput.value.trim();
-    
+
             // Validate vehicle number format
             const vehicleNumberPattern = /^[A-Z0-9]{5,8}$/;
             if (!vehicleNumberPattern.test(vehicleNumber)) {
@@ -532,14 +600,14 @@
               });
               return;
             }
-    
+
             // Success popup
             Swal.fire({
               icon: "success",
               title: "Booking Confirmed",
               text: `Thank you, ${name}! Your booking has been successfully submitted.`,
             });
-    
+
             form.reset();
           });
         } else {
@@ -547,6 +615,5 @@
         }
       });
     </script>
-    
   </body>
 </html>

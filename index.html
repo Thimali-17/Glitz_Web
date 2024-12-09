@@ -50,7 +50,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="#services">Our Services</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
       </ul>
     </nav>
 
@@ -236,51 +236,58 @@
     </section>
 
     <!----------------------------------- contact us  ---------------------------------------------->
-
-    <section class="contact-us" id="contact-us">
+    <section id="contact" class="contact-section">
       <div class="container">
-        <h2>CONTACT US</h2>
-        <p>
-          We'd love to hear from you! Get in touch with us using the form below
-          or reach out directly.
-        </p>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <p><i class="fas fa-phone"></i> +94 00000000000</p>
-            <p><i class="fas fa-envelope"></i>@example.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Batagolla, Yakkala</p>
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Whether you have questions, feedback, or just want to chat, feel free to reach out using the form below.</p>
+            <form action="#" method="POST" class="contact-form">
+              <div class="form-group">
+                <label for="name"></label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <label for="message"></label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
           </div>
-          <form class="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Vehicle Number" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+          
+          <div class="col-lg-6 contact-info">
+            <h4>Get in Touch with Us</h4>
+            <p><i class="fas fa-phone"></i> +94 00000000000</p>
+            <p><i class="fas fa-envelope"></i> example@email.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Batagolla, Yakkala</p>
+    
+            <!-- Map Embed -->
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.420111483776!2d80.04099477499794!3d7.077195492925626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2fc2f4b77d05d%3A0x34523a0fdbdedc60!2sGlitz%20Park!5e0!3m2!1sen!2slk!4v1733730413082!5m2!1sen!2slk"
+               width="50%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!----------------------------------- Footer Section ---------------------------------------------->
-
+    
+    <!-- Footer Section -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <p>&copy; 2024 Glitz Park. All Rights Reserved.</p>
-          <ul class="social-links">
-            <li>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </li>
-          </ul>
+          <div class="footer-left">
+            <p>&copy; 2024 Glitz Park. All Rights Reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
